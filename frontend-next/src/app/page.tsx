@@ -25,21 +25,24 @@ export default function Home() {
   };
 
   return (
-    <main className="flex flex-col items-center p-6">
-      <h1 className="text-3xl font-bold mb-4">PokeDex Lite</h1>
+    <main style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '24px' }}>
+      <h1 style={{ fontSize: '1.875rem', fontWeight: 'bold', marginBottom: '16px' }}>PokeDex Lite</h1>
       <input
-        className="border p-2 mb-2"
+        style={{ border: '1px solid #ccc', padding: '8px', marginBottom: '8px', borderRadius: '4px' }}
         placeholder="Enter Pokémon name"
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
-      <button className="bg-blue-500 text-white px-4 py-2 rounded" onClick={search}>
+      <button 
+        style={{ backgroundColor: '#3b82f6', color: 'white', padding: '8px 16px', borderRadius: '4px', border: 'none', cursor: 'pointer' }} 
+        onClick={search}
+      >
         Search
       </button>
 
       {pokemon && (
-        <div className="mt-6 text-center">
-          <h2 className="text-2xl capitalize">{pokemon.name}</h2>
+        <div style={{ marginTop: '24px', textAlign: 'center' }}>
+          <h2 style={{ fontSize: '1.5rem', textTransform: 'capitalize' }}>{pokemon.name}</h2>
           <Image 
             src={pokemon.sprites.front_default} 
             alt={pokemon.name}
